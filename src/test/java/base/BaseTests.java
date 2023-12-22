@@ -15,6 +15,7 @@ public class BaseTests {
     @BeforeClass
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         driver = new ChromeDriver(options);
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
