@@ -5,7 +5,7 @@ import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
-public class KeysTest extends BaseTests {
+public class KeysTests extends BaseTests {
 
     @Test
     public void testKeys() {

@@ -5,7 +5,7 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
-public class ContextMenuTest extends BaseTests {
+public class ContextMenuTests extends BaseTests {
 
     @Test
     public void testContextMenu() {
