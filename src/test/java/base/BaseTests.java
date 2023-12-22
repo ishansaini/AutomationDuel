@@ -2,6 +2,7 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -13,16 +14,22 @@ public class BaseTests {
 
     @BeforeClass
     public void setUp() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+        driver = new ChromeDriver(options);
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        goHome();
 
+        goHome();
         homePage = new HomePage(driver);
     }
 
     @BeforeMethod
     public void goHome() {
     driver.get("https://the-internet.herokuapp.com");
+    }
+
+    public void navigateToNSE() {
+        driver.get("https://www.nseindia.com/");
     }
 
     @AfterClass
